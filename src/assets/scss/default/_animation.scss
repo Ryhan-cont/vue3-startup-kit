@@ -1,0 +1,228 @@
+.transition-3{transition: all .3s;}
+//Height collups animation
+.height-collups-enter-active,
+.height-collups-leave-active {
+  transition: height .3s ease-in-out;
+  overflow: hidden;
+}
+//General fade
+.fade-enter-to,
+.fade-leave-from {
+  opacity:1;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .1s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+    opacity:0;
+}
+//General slow fade
+.slow-fade-enter-to,
+.slow-fade-leave-from {
+  opacity:1;
+}
+.slow-fade-enter-active,
+.slow-fade-leave-active {
+  transition: all .5s ease;
+}
+.slow-fade-enter-from,
+.slow-fade-leave-to {
+    opacity:0;
+}
+//Animation-dropdown
+.dropdown-enter-to,
+.dropdown-leave-from {
+  opacity:1 !important;
+  //transform: scale(1) translateY(0px);
+}
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: all .3s ease;
+}
+.dropdown-enter-from,
+.dropdown-leave-to {
+    opacity:0 !important;
+    //transform: scale(.95) translateY(-5px);
+}
+//Animation-dropup
+.dropup-enter-to,
+.dropup-leave-from {
+  opacity:1 !important;
+  //transform: scale(1) translateY(0px);
+}
+.dropup-enter-active,
+.dropup-leave-active {
+  transition: all .3s ease;
+}
+.dropup-leave-to,
+.dropup-enter-from{
+    opacity:0 !important;
+    //transform: scale(.95) translateY(5px);
+}
+//Animation-dropmiddle
+.dropmiddle-enter-to,
+.dropmiddle-leave-from {
+  opacity:1 !important;
+  //transform: scale(1);
+}
+.dropmiddle-enter-active,
+.dropmiddle-leave-active {
+  transition: all .3s ease;
+}
+.dropmiddle-leave-to,
+.dropmiddle-enter-from{
+    opacity:0 !important;
+    //transform: scale(.95);
+}
+
+//Animation-zoom-toggle
+.zoom-toggle-enter-to,
+.zoom-toggle-leave-from {
+  transform: scale(1)
+}
+.zoom-toggle-enter-active,
+.zoom-toggle-leave-active {
+  transition: all .3s ease;
+}
+.zoom-toggle-enter-from,
+.zoom-toggle-leave-to {
+  transform: scale(0)
+}
+
+//Builder Step Transition
+.builder-step-enter-to,
+.builder-step-leave-from{
+  opacity:1;
+}
+.builder-step-enter-active,
+.builder-step-leave-active {
+  transition: all .3s ease;
+}
+.builder-step-enter-from,
+.builder-step-leave-to {
+  opacity:0;
+}
+
+//Builder leftmenu transition
+.builder-left-menu-enter-to,
+.builder-left-menu-leave-from{
+  left: 0;
+}
+.builder-left-menu-enter-active,
+.builder-left-menu-leave-active {
+  transition: all var(--builder-menu-transition-time) ease;
+}
+.builder-left-menu-enter-from,
+.builder-left-menu-leave-to {
+  left: calc(-1 * var(--builder-left-menu-size));
+}
+//Builder rightmenu transition
+.builder-right-menu-enter-to,
+.builder-right-menu-leave-from{
+  right: 0;
+}
+.builder-right-menu-enter-active,
+.builder-right-menu-leave-active {
+  transition: all var(--builder-menu-transition-time) ease;
+}
+.builder-right-menu-enter-from,
+.builder-right-menu-leave-to {
+  right: calc(-1 * var(--builder-right-menu-size));
+}
+
+//Signing rightmenu transition
+.signing-right-menu-enter-to,
+.signing-right-menu-leave-from{
+  width: var(--signing-right-menu-size);
+}
+.signing-right-menu-enter-active,
+.signing-right-menu-leave-active {
+  transition: all var(--signing-menu-transition-time) ease;
+}
+.signing-right-menu-enter-from,
+.signing-right-menu-leave-to {
+  width: 0px;
+}
+
+
+//Use template rightmenu transition
+.use-template-right-menu-enter-to,
+.use-template-right-menu-leave-from{
+  width: var(--use-template-right-menu-size);
+}
+.use-template-right-menu-enter-active,
+.use-template-right-menu-leave-active {
+  transition: all var(--use-template-right-menu-transition-time) ease;
+}
+.use-template-right-menu-enter-from,
+.use-template-right-menu-leave-to {
+  width: 0px;
+}
+
+//Table filter transition
+.table-filter-enter-to,
+.table-filter-leave-from{
+  max-height: 100px;
+}
+.table-filter-enter-active,
+.table-filter-leave-active {
+  transition: all .3s ease;
+  overflow: hidden;
+}
+.table-filter-enter-from,
+.table-filter-leave-to {
+  max-height: 0px;
+}
+
+//Builder menu button adjustment
+.builder-menu-right-adjustment{
+  right: -18px;
+}
+.builder-menu-left-adjustment{
+  left: -18px;
+}
+.builder-menu-right-space-adjustment{
+  padding-right: 0px;
+}
+.builder-menu-left-space-adjustment{
+  padding-left: 0px;
+}
+
+
+.menu-right-adjustment{
+  right: -18px;
+}
+
+//Keyframe animation
+
+.slow-blink{animation: slow-blink 2s infinite}
+
+@keyframes slow-blink {
+  0%   {opacity: 1}
+  50%   {opacity: .5}
+  100%   {opacity: 1}
+}
+
+//for loading animation [folder, find user etc]
+.data-loading-animation{
+  position:relative;
+  height: 2px;
+  overflow: hidden;
+  div{
+      height: 2px;
+      background-color: var(--primary);
+      animation: rot 2s infinite linear;
+      position: absolute;
+      width: 50%;
+  }
+}
+@keyframes rot  {
+  0% {
+      left:  -50%;
+  }
+  100% {
+      left:  100%;
+  }
+}

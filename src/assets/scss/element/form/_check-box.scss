@@ -1,0 +1,26 @@
+.cc-check-box--container{
+    .cc-check-box-{
+        &-main{
+            display: inline-flex;
+            align-items: center;
+        }
+        &-input{
+            display: flex;
+            align-items: center;
+            height: 16px;
+            width: 16px;
+            input{
+                @include site-checkbox;
+                // margin: -3px 1px 1px 1px;
+            }
+        }
+        &-label{
+            margin-left: 12px;
+            @include b3-meta;
+            color: var(--mid);
+        }
+    }
+    .cc-check-box-detail{
+        min-height: var(--input-detail-height);
+    }
+}

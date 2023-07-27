@@ -1,0 +1,281 @@
+div {
+    &.swal2-popup {
+        width: 440px;
+        border-radius: 4px;
+        padding: 30px 50px;
+    }
+
+    &.swal2-html-container {
+        font-size: 16px;
+        color: var(--mid);
+        font-weight: 400;
+        line-height: 26px;
+        margin: 0 0 20px 0;
+    }
+
+    &.swal2-header {
+        padding: 0px;
+    }
+
+    &.swal2-content {
+        padding: 0px
+    }
+
+    &.swal2-actions {
+        margin: -10px;
+    }
+}
+.swal2-container {
+    .swal2-close {
+        font-size: 26px;
+        color: var(--mid);
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        transition: 0.3s;
+        &:hover {
+            color: var(--mid);
+        }
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    .swal2-icon {
+        height: 60px;
+        width: 60px;
+        margin: 0 auto 20px;
+        &.swal2-error {
+            border-color: var(--action);
+            color: var(--action);
+            .swal2-x-mark {
+                .swal2-x-mark-line-left, .swal2-x-mark-line-right {
+                    background-color: var(--action);
+                    top: 28px;
+                    left: 10px;
+                }
+            }
+        }
+        &.swal2-success {
+            .swal2-success-line-tip {
+                left: 6px !important;
+            }
+            .swal2-success-line-long {
+                right: 2px !important;
+            }
+        }
+    }
+    .swal-toast{
+        .swal2-icon.swal2-success {
+            .swal2-success-line-tip {
+                left: 3px !important;
+            }
+        }
+    }
+}
+
+.swal2-popup.swal2-toast{
+    .swal2-close {
+        height: 2.5rem !important;
+        font-size: 1.6em !important;
+    }
+    .swal2-timer-progress-bar {
+        height: 0.15em !important;
+    }
+} 
+
+
+
+.swal2-icon-error, .swal2-icon-success {
+    .swal2-html-container {
+        margin-bottom: 0;
+    }
+}
+
+h2 {
+    &.swal2-title {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        padding: 0;
+        margin: 0 0 20px 0;
+        color: var(--dark);
+    }
+
+    &.crewlix-swal-success {
+        color: #3eb75e;
+    }
+
+    &.crewlix-swal-warning {
+        color: #ff8f3c;
+    }
+
+    &.crewlix-swal-error {
+        color: #ff0003;
+    }
+
+    &.crewlix-swal-info {
+        color: #1ba2db;
+    }
+}
+
+img {
+    &.swal2-image {
+        margin: 0px;
+    }
+}
+
+button {
+    &.swal2-styled {
+        margin: 10px;
+        transition: 0.3s;
+        font-weight: 500;
+        &:hover {
+            background-image: none !important;
+        }
+    }
+    &.swal2-styled.swal2-confirm {
+        background-color: var(--primary);
+        color: var(--white);
+        font-size: 14px;
+        line-height: 22px;
+        padding: 7px 15px;
+        border-radius: 4px;
+        &:focus {
+            box-shadow: none;
+        }
+        &:hover {
+            background-color: var(--primary-hover-bg);
+        }
+    }
+    &.swal2-styled.swal2-cancel {
+        background-color: transparent;
+        border: 2px solid var(--border-grey);
+        color: var(--mid);
+        font-size: 14px;
+        line-height: 22px;
+        padding: 5px 15px;
+        border-radius: 4px;
+        &:focus {
+            box-shadow: none;
+        }
+        &:hover {
+            border-color: var(--action);
+            color: var(--action);
+        }
+    }
+    &.swal2-styled.swal2-deny {
+        background-color: transparent;
+        border: 2px solid var(--border-grey);
+        color: var(--mid);
+        font-size: 14px;
+        line-height: 22px;
+        padding: 5px 15px;
+        border-radius: 4px;
+        &:focus {
+            box-shadow: none;
+        }
+        &:hover {
+            border-color: var(--action);
+            color: var(--action);
+        }
+    }
+}
+
+.swal2-container {
+    &.crewlix-swal-error-modal {
+        .swal2-popup {
+            .swal2-header {
+                .swal2-icon {
+                    margin: 0 auto;
+                    color: #ff0003;
+                    font-size: 8px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &.crewlix-swal-confirm-modal {
+        .swal2-popup {
+            .swal2-header {
+                .swal2-icon {
+                    margin: 0 auto;
+                    color: #ff8f3c;
+                    font-size: 8px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &.crewlix-swal-success-modal {
+        .swal2-popup {
+            .swal2-header {
+                .swal2-icon {
+                    margin: 0 auto;
+                    color: #3eb75e;
+                    font-size: 8px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &.crewlix-swal-action-required-modal {
+        .swal2-popup {
+            .swal2-header {
+                .swal2-icon {
+                    margin: 0 auto;
+                    color: #1ba2db;
+                    font-size: 8px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    &.on-boarding-completed-modal {
+        .swal2-popup {
+            .swal2-header {
+                .swal2-icon {
+                    margin: 0 auto;
+                    color: #3eb75e;
+                    font-size: 8px;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    .actions-employee-creation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            &.swal2-styled {
+                margin: 0;
+
+                &.swal2-cancel {
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        @media (max-width: 747px) {
+            flex-direction: column;
+
+            button {
+                &.swal2-styled {
+                    &.swal2-cancel {
+                        margin-top: 10px;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

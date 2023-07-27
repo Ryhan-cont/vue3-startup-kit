@@ -1,0 +1,129 @@
+.m-all-minus-10 {
+    margin: -10px !important;
+}
+
+// Height & Width
+.w-100{width: 100%}
+.h-100{height: 100%}
+
+.mxw-100{max-width: 100%}
+.mxh-100{max-height: 100%}
+
+.h-auto{height: auto}
+.w-v{width:100vw}
+.h-v{height:100vh}
+.h-v-phone{
+    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+}
+.ml-auto{margin-left: auto;}
+.mr-auto{margin-right: auto;}
+.mt-auto{margin-top: auto;}
+.mb-auto{margin-bottom: auto;}
+.ma-auto{margin: auto;}
+.mx-auto{margin-left: auto; margin-right: auto;}
+.mt-auto{margin-top: auto; margin-bottom: auto;}
+.mtb-0-auto {
+    margin: 0 auto;
+}
+
+//Padding Margin
+$spaceAmounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 20, 25, 30, 35, 40, 45, 50);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceAmounts {
+    .ma-#{$space} {
+        margin: #{$space}px !important;
+    }
+
+    .pa-#{$space} {
+        padding: #{$space}px !important;
+    }
+
+    .mx-#{$space} {
+        margin-left: #{$space}px !important;
+        margin-right: #{$space}px !important;
+    }
+
+    .px-#{$space} {
+        padding-left: #{$space}px !important;
+        padding-right: #{$space}px !important;
+    }
+    .my-#{$space} {
+        margin-top: #{$space}px !important;
+        margin-bottom: #{$space}px !important;
+    }
+
+    .py-#{$space} {
+        padding-top: #{$space}px !important;
+        padding-bottom: #{$space}px !important;
+    }
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+
+        .p#{str-slice($side, 0, 1)}-#{$space} {
+            padding-#{$side}: #{$space}px !important;
+        }
+    }
+}
+
+$spaceAmounts: (-5,-4,-3,-2,-1);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceAmounts {
+    @each $side in $sides {
+        .m#{str-slice($side, 0, 1)}-#{$space} {
+            margin-#{$side}: #{$space}px !important;
+        }
+    }
+}
+
+
+$spaceAmounts: (0, 10, 15, 20);
+$sides: (top, bottom, left, right);
+
+@each $name, $size in $breakPoint {
+    @media (max-width : $size){
+        @each $space in $spaceAmounts {
+            @each $side in $sides {
+                .m#{str-slice($side, 0, 1)}-#{$space}#{$name} {
+                    margin-#{$side}: #{$space}px !important;
+                }
+            }
+        }
+    }
+}
+
+$spaceAmounts: (0, 10, 15);
+$sides: (top, bottom, left, right);
+
+@each $name, $size in $breakPoint {
+    @media (max-width : $size){
+        @each $space in $spaceAmounts {
+            @each $side in $sides {
+                .p#{str-slice($side, 0, 1)}-#{$space}#{$name} {
+                    padding-#{$side}: #{$space}px !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+//Grid Column space
+$spaceAmounts: (5, 10, 15);
+
+@each $space in $spaceAmounts {
+    .grid-col-gap-#{$space} {grid-column-gap: #{$space}px;}
+}
+
+
+// Width Defin class
+.mw-120 {
+    min-width: 120px;
+}

@@ -1,0 +1,306 @@
+//##################################################################
+//####### General Data Table CSS (Common for all data table) #######
+//##################################################################
+.data-table--main{
+    position: relative;
+    display: grid;
+}
+.data-table--container{
+    overflow: auto;
+    width: 100%;
+    scroll-behavior: smooth;
+    //Common table stuff.
+    table {
+        border-collapse: collapse;
+        border-spacing:0; 
+        width: 100%;
+        height:1px
+    }
+    thead{
+        position: relative; 
+        position: sticky;
+        top: 0;
+    }
+    td{vertical-align: middle;border-collapse:collapse !important;border-spacing:0;}     
+}
+.data-table--no-item{
+    position: absolute;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include no-text-select;
+}
+.data-table--loader-animation{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    background-color: var(--primary);
+    height: 2px;
+    transition: all .3s;
+    overflow: hidden;
+    &-content{
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        height: 2px;
+        background-color: var(--border-primary);
+        width: 50%;
+        animation: rot 2s infinite linear;
+        transition: all .3s;
+    }
+}
+
+@keyframes rot  {
+    0% {
+      left:  -50%;
+    }
+    100% {
+      left:  100%;
+    }
+    
+}
+
+.data-table-hide-empty-li:not(:has(li)){
+    display: none !important;
+}
+
+//##################################################################
+//#################### Data Table Theaming CSS #####################
+//##################################################################
+/** 
+    Theme name cc-data-table
+*/
+.data-table{
+    &.data-table--main{
+        background-color: #FFF;
+    }
+    .data-table-{
+        &-container{
+            thead{
+                background:var(--primary-shade); 
+                height: 40px;
+                z-index: 2;
+                td {
+                    height: 40px;
+                    padding: 0 10px;
+                    &:nth-child(2) {
+                        padding-left: 0 !important;
+                    }
+                    &.data-table--checkbox {
+                        padding-right: 0 !important;
+                        padding-left: 0 !important;
+                        width: 16px;
+                    }
+                }
+            }
+            tbody{
+                font-size: 15px;
+                font-weight: 400;
+                color: var(--mid);
+                tr:not(:last-child){
+                    td:not(:first-child):not(:last-child){
+                        border-bottom: 1px solid var(--border-grey);
+                    }
+                    td:last-child{
+                        .data-table--cell-action-container{
+                            border-bottom: 1px solid var(--border-grey);
+                        }
+                    }
+                }
+                tr{
+                    transition: all .3s;
+                    position: relative;
+                    td {
+                        padding: 20px 10px;
+                        color: var(--mid);
+                        &:first-child {
+                            padding-left: 0 !important;
+                            padding-right: 0 !important;
+                        }
+                        &:nth-child(2) {
+                            padding-left: 0 !important;
+                        }
+                        &.data-table--checkbox {
+                            padding-right: 0 !important;
+                            padding-left: 0 !important;
+                        }
+                    }
+                }
+                tr:hover{
+                    
+                    z-index: 1;
+                    
+                    &::after{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        background-color: #F1FCFF;
+                        inset: 2px;
+                        z-index: -1;
+                        border-radius: 5px;
+                    }
+                    td:last-child{
+                        .data-table--cell-action-container{
+                            &::after{
+                                content: '';
+                                display: block;
+                                position: absolute;
+                                background-color: #F1FCFF;
+                                inset: 2px 2px 2px 0px;
+                                z-index: -1;
+                                border-radius: 0px 5px 5px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+            //Scrollbar.
+            scrollbar-width: thin;
+            scrollbar-color:var(--primary-shadeb) var(--white);
+            &::-webkit-scrollbar{
+                height: 5px;
+                width: 5px;
+                background-color: var(--white);
+            }
+            &::-webkit-scrollbar-thumb{
+                border-radius: 100px;
+                background: var(--primary-shade);
+            }
+        }
+
+        //Spacing
+        &-x-spacer{
+            padding: 0px !important;
+            width: 20px;
+        }
+        &-action-spacer{
+            padding: 0px !important;
+            width: 35px;
+        }
+
+        //Header Cell
+        &-header-cell{
+            height: 40px;
+            display: flex;
+            align-items: center;
+            &-checkbox{
+                height: 40px;
+                display: flex;
+                align-items: center;
+            }
+            &-sort{
+                padding: 5px 10px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                &::before{
+                    font-family: 'Font Awesome 5 Pro';
+                    font-weight: 900;
+                    content:'\f0dc';
+                    opacity: .4;
+                    padding-top: 3px;
+                    font-size: 12px;
+                }
+                &-icon{
+                    position: absolute;
+                    padding-top: 2px;
+                }
+            }
+            &-def{
+                white-space: nowrap;
+                color: var(--dark);
+                @include b2-bold;
+            }
+        }
+        //Body Cell
+        &-row-cell{
+            height: 40px;
+            width: 100%;
+        }
+        &-body-cell-def {
+            white-space: nowrap;
+        }
+
+        //Action Content
+        &-cell-action{
+            position: sticky;
+            right: 0px;
+            background-color: var(--white);
+            &-container{
+                height: 100%;
+                width: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                margin-right: 20px;
+                cursor: pointer;
+            }
+            &-title {
+                font-size: 15px;
+                font-weight: 400;
+            }
+            &-option-container{
+                position: fixed;
+                background-color: var(--white);
+                box-shadow: 0px 0px 5px 1px rgb(232, 232, 232);
+                opacity: 0;
+                display: none;
+                z-index: 10;
+                min-width: 145px;
+                border-radius: 4px;
+                padding: 15px 0;
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    
+                    li {
+                        padding: 6px 20px;
+                        font-size: 14px;
+                        color: var(--mid);
+                        font-weight: 400;
+                        a, button {
+                            font-size: 14px;
+                            font-weight: 400;
+                            background-color: transparent;
+                            border: none;
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            color: var(--mid);
+                            transition: 0.3s;
+                            i {
+                                margin-right: 5px;
+                                min-width: 16px;
+                            }
+                        }
+                        i {
+                            margin-right: 5px;
+                        }
+                        &:hover {
+                            background-color: var(--primary-shade);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Data Table Elements New Design 
+.data-table {
+    td {
+        .table-date {
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        .table-time {
+            color: #939393;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+}

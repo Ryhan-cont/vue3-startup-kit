@@ -1,0 +1,184 @@
+.pannel-{
+    &-layout{
+
+    }
+    &-header{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        display: flex;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.02);
+        z-index: 11;
+        &-spacer{
+          flex-shrink: 0;
+        }
+        &-content{
+          background-color: var(--white);
+          flex: auto;
+          padding: 0px 20px;
+          display: flex;
+        }
+        &-logo{
+          flex: auto;
+          padding-left: 20px;
+          display: flex;
+          align-items: center;
+        }
+        &-menu{
+          display: flex;
+          align-items: center;
+        }
+        &-toggle{
+          display: flex;
+          align-items: center;
+          &-btn{
+            cursor: pointer;
+            border: none;
+            background: transparent;
+          }
+          &-icon{
+            width: 25px;
+            height: 2px;
+            background: var(--mid);
+            border-radius: 5px;
+            display: block;
+            margin: 3px 0px;
+          }
+        }
+    }
+
+    &-left-menubar{
+      position: fixed;
+      z-index: 11;
+      &-floating{
+          position: fixed;
+          left: 0px;
+          bottom: 0px;
+          top: 0px;
+          right: 0px;
+          width: auto !important;
+          background-color: rgba(0,0,0,.5);
+          
+      }
+      &-main{
+          background-color: #4B2965;
+          padding: 25px 0px;
+          overflow-y: auto;
+
+          scrollbar-width: thin !important;
+          scrollbar-color:var(--scrollbar-thumb) var(--dark) !important;
+          &::-webkit-scrollbar{
+              height: 5px !important;
+              width: 5px !important;
+              background-color: var(--dark) !important;
+          }
+          &::-webkit-scrollbar-thumb{
+              border-radius: 100px !important;
+              background: var(--scrollbar-thumb) !important;
+          }
+      }
+      &-btn{
+        padding: 5px 10px 5px 30px ;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all .3s;
+        &:hover{
+          // color: var(--primary);
+          background-color: #542f70;
+        }
+      }
+      &-active-btn{
+        background-color: var(--primary) !important;
+        color: var(--white) !important;
+        &:hover {
+          background-color: var(--primary);
+          color: var(--white) !important;
+        }
+      }
+      &-toggle-active-btn{
+        cursor: pointer;
+      }
+      &-sub-active{
+
+      }
+      &-sub-btn{
+        padding: 4px 11px 4px 60px ;
+        color: var(--white);
+        transition: all .3s;
+        &:hover{
+          // color: #23354A;
+          background-color: #542f70;
+        }
+      }
+      &-sub-active-btn{
+        background-color: var(--primary) !important;
+        color: var(--white) !important;
+      }
+    }
+    &-body{
+        &-base{
+          display: flex;
+        }
+        &-spacer{
+          flex-shrink: 0;
+        }
+        &-content{
+          // overflow: auto;
+          flex: auto;
+        }
+    }
+}
+
+//Animation-menu
+.slide-left-menu-enter-to,
+.slide-left-menu-leave-from {
+  margin-left:0px;
+}
+.slide-left-menu-enter-active,
+.slide-left-menu-leave-active {
+  transition: all .2s ease;
+  margin-left: 0px;
+}
+.slide-left-menu-enter-from,
+.slide-left-menu-leave-to {
+  margin-left: var(--leftMenuNegSize);
+}
+
+//Animation-menu-hover
+.fade-left-menu-enter-to,
+.fade-left-menu-leave-from {
+  opacity:1;
+}
+.fade-left-menu-enter-active,
+.fade-left-menu-leave-active {
+  transition: all .2s ease;
+}
+.fade-left-menu-enter-from,
+.fade-left-menu-leave-to {
+    opacity:0;
+}
+
+.expand-left-menu-btn-enter-active,
+.expand-left-menu-btn-leave-active {
+  transition: height .3s ease-in-out;
+  overflow: hidden;
+}
+
+//Animation-router
+.fade-route-enter-to,
+.fade-route-leave-from {
+  opacity:1;
+}
+.fade-route-enter-active,
+.fade-route-leave-active {
+  transition: opacity .2s ease;
+}
+.fade-route-enter-from,
+.fade-route-leave-to {
+    opacity:0;
+}
+
+

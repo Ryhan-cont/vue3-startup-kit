@@ -1,0 +1,185 @@
+// General
+$dp__font_family: "Roboto", sans-serif; // Font size for the menu
+$dp__border_radius: 4px; // Border radius everywhere
+$dp__cell_border_radius: 4px; // Specific border radius for the calendar cell
+
+// Transitions
+$dp__transition_length: 22px !default; // Passed to the translateX in animation
+$dp__transition_duration: 0.1s !default; // Transition duration
+
+// Sizing
+$dp__button_height: 35px; // size for buttons in overlays
+$dp__month_year_row_height: 35px; // height of the month-year select row
+$dp__month_year_row_button_size: 25px; // Specific height for the next/previous buttons
+$dp__button_icon_height: 20px; // icon sizing in buttons
+$dp__cell_size: 35px; // width and height of calendar cell
+$dp__cell_padding: 5px; // padding in the cell
+$dp__common_padding: 10px;
+$dp__input_padding: 6px 12px; // padding in the input
+$dp__input_icon_padding: 35px; // Padding on the left side of the input if icon is present
+$dp__menu_min_width: 260px; // Adjust the min width of the menu
+$dp__action_buttons_padding: 2px 5px; // Adjust padding for the action buttons in action row
+$dp__row_margin: 5px 0; // Adjust the spacing between rows in the calendar
+$dp__calendar_header_cell_padding: 0.5rem; // Adjust padding in calendar header cells
+$dp__two_calendars_spacing: 10px; // Space between two calendars if using two calendars
+$dp__overlay_col_padding: 3px; // Padding in the overlay column
+$dp__time_inc_dec_button_size: 32px; // Sizing for arrow buttons in the time picker
+
+// Font sizes
+$dp__font_size: 1rem; // overall font-size
+$dp__preview_font_size: 0.8rem; // font size of the date preview in the action row
+$dp__time_font_size: 2rem; // font size in the time picker
+
+@import '@vuepic/vue-datepicker/src/VueDatePicker/style/main.scss';
+
+.dp__theme_dark {
+    --dp-background-color: #212121;
+    --dp-text-color: #fff;
+    --dp-hover-color: #484848;
+    --dp-hover-text-color: #fff;
+    --dp-hover-icon-color: #959595;
+    --dp-primary-color: #005cb2;
+    --dp-primary-disabled-color: #61a8ea;
+    --dp-primary-text-color: #fff;
+    --dp-secondary-color: #a9a9a9;
+    --dp-border-color: #2d2d2d;
+    --dp-menu-border-color: #2d2d2d;
+    --dp-border-color-hover: #aaaeb7;
+    --dp-disabled-color: #737373;
+    --dp-disabled-color-text: #d0d0d0;
+    --dp-scroll-bar-background: #212121;
+    --dp-scroll-bar-color: #484848;
+    --dp-success-color: #00701a;
+    --dp-success-color-disabled: #428f59;
+    --dp-icon-color: #959595;
+    --dp-danger-color: #e53935;
+    --dp-marker-color: #e53935;
+    --dp-tooltip-color: #3e3e3e;
+    --dp-highlight-color: rgb(0 92 178 / 20%);
+  }
+  
+  .dp__theme_light {
+    --dp-background-color: #fff;
+    --dp-text-color: var(--mid);
+    --dp-hover-color: #f3f3f3;
+    --dp-hover-text-color: #212121;
+    --dp-hover-icon-color: #959595;
+    --dp-primary-color: #1898A5;
+    --dp-primary-disabled-color: #63c6d1;
+    --dp-primary-text-color: #f8f5f5;
+    --dp-secondary-color: #c0c4cc;
+    --dp-border-color: var(--border-primary);
+    --dp-menu-border-color: #ddd;
+    --dp-border-color-hover: var(--border-primary);
+    --dp-disabled-color: #f6f6f6;
+    --dp-scroll-bar-background: #f3f3f3;
+    --dp-scroll-bar-color: #959595;
+    --dp-success-color: #3EB75E;
+    --dp-success-color-disabled: #a3d9b1;
+    --dp-icon-color: #959595;
+    --dp-danger-color: #FF0003;
+    --dp-marker-color: #ff6f60;
+    --dp-tooltip-color: #fafafa;
+    --dp-disabled-color-text: #8e8e8e;
+    --dp-highlight-color: rgb(25 118 210 / 10%);
+  }
+  
+
+.date-picker{
+    &-wrapper {
+        .dp__input{
+            border: 2px solid var(--dp-border-color);
+            padding-top: 6px;
+            padding-bottom: 5px;
+            &::-webkit-input-placeholder {@include b3-meta; opacity: 1; -webkit-transition: opacity var(--placeholder-transition-time); transition: opacity var(--placeholder-transition-time); color: var(--placeholder-color); } /* Chrome <=56, Safari < 10 */
+            &:-moz-placeholder {@include b3-meta; opacity: 1; -moz-transition: opacity var(--placeholder-transition-time); transition: opacity var(--placeholder-transition-time);  color: var(--placeholder-color);} /* FF 4-18 */
+            &::-moz-placeholder {@include b3-meta; opacity: 1; -moz-transition: opacity var(--placeholder-transition-time); transition: opacity var(--placeholder-transition-time);  color: var(--placeholder-color);} /* FF 19-51 */
+            &:-ms-input-placeholder {@include b3-meta; opacity: 1; -ms-transition: opacity var(--placeholder-transition-time); transition: opacity var(--placeholder-transition-time);  color: var(--placeholder-color);} /* IE 10+ */
+            &::placeholder {@include b3-meta; opacity: 1; transition: opacity var(--placeholder-transition-time);  color: var(--placeholder-color);} /* Modern Browsers */
+        }
+        .dp__input_focus{
+            border: 2px solid var(--border-primary-active)
+        }
+        &-reset{
+            .dp__clear_icon{
+                display: none;
+            }
+        }
+        &-disabled{
+            pointer-events: none;
+        }
+        &-readonly{
+            pointer-events: none;
+        }
+
+    }
+    &-menu{
+        border: 1px solid transparent;
+        box-shadow: 0px 5px 22px rgb(27 27 18 / 13%);
+        border-radius: 4px;
+        .dp__arrow_top, .dp__arrow_bottom{display: none;}
+        &:focus{
+            border: 1px solid transparent;
+        }
+        .dp__instance_calendar{
+            padding: 8px;
+        }
+        .dp__preset_ranges{
+            padding-top: 10px;
+        }
+        .dp__preset_range{
+            white-space:nowrap;
+            padding: 10px 20px;
+            &:hover{
+                border-radius: 3px;
+            }
+        }
+        .dp__action_row{
+            border-top: 1px solid var(--border-primary)
+        }
+        .dp__action{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 22px;
+            height: 28px;
+            padding: 0px 15px;
+        }
+        .dp__select {
+            background: var(--action);
+            color: #FFFFFF;
+        }
+    }
+}
+.datepicker-animation-from{
+    opacity:0;
+}
+.datepicker-animation-to{
+    transition: all .3s;
+    opacity:1;
+}
+.datepicker-animation-inner-from{
+    //transform: scale(.98) translateY(-5px) !important;
+}
+.datepicker-animation-inner-to{
+    transition: all .3s;
+    //transform: scale(1) translateY(0px) !important;
+}
+
+.dp__input_icon_pad {
+    padding-right: 35px;
+    padding-left: 12px;
+}
+.dp__input_icon {
+    right: 0;
+    left: auto;
+}
+
+.datepicker-size-lg {
+    .dp__input {
+        height: 40px;
+    }
+}
+
+.dp__clear_icon {
+    display: none;
+}

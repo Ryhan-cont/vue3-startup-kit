@@ -1,0 +1,31 @@
+.message--container{
+    display: flex;
+    font-size: 13px;
+    .message-{
+        &-icon{
+            display: flex;
+            align-items: center;
+            padding-right: 5px;
+            font-size: 11px;
+            margin-top: -1px;
+        }
+        &-text{
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            line-height: 1;
+        }
+    }
+    &.message--error{
+        color: var(--danger);
+    }
+    &.message--success{
+        color: var(--success);
+    }
+    &.message--warning{
+        color: var(--warning);
+    }
+    &.message--info{
+        color: var(--info);
+    }
+}

@@ -1,0 +1,33 @@
+.otp-imput-{
+    &-main{
+
+    }
+    &-container{
+        display: flex;
+        margin: 0px -5px;
+    }
+    &-item{
+        flex:1;
+        padding: 0px 5px;
+        input{
+            @include input-border;
+            transition: all .3s;
+            min-width: 0px;
+            width: 100%;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+            padding: 11px 3px;
+            text-align: center;
+            border-radius: 4px;
+            &:focus {
+                outline:none;
+                border:2px solid var(--primary-shade)
+            }
+        }
+    }
+}
+.otp-imput--detail{
+    padding-top: 8px;
+    min-height: var(--input-detail-height);
+}

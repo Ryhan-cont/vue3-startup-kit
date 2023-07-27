@@ -1,0 +1,19 @@
+//Border
+$borderArr: ('grey', 'primary');
+@each $item in $borderArr {
+    .border-#{$item}-1{border: 1px solid var(--border-#{$item})}
+    .border-#{$item}-t1{border-top: 1px solid var(--border-#{$item})}
+    .border-#{$item}-b1{border-bottom: 1px solid var(--border-#{$item})}
+    .border-#{$item}-l1{border-left: 1px solid var(--border-#{$item})}
+    .border-#{$item}-r1{border-right: 1px solid var(--border-#{$item})}
+
+    .border-#{$item}-2{border: 2px solid var(--border-#{$item})}
+    .border-#{$item}-t2{border-top: 2px solid var(--border-#{$item})}
+    .border-#{$item}-b2{border-bottom: 2px solid var(--border-#{$item})}
+    .border-#{$item}-l2{border-left: 2px solid var(--border-#{$item})}
+    .border-#{$item}-r2{border-right: 2px solid var(--border-#{$item})}
+}
+$radiousArr: (6);
+@each $item in $radiousArr {
+    .radius-#{$item}{border-radius: #{$item}px;}
+}

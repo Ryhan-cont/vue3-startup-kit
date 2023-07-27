@@ -1,0 +1,70 @@
+.cc-message-box--container{
+    .cc-message-box-{
+        &-main{
+            border: 2px solid var(--border-primary);
+            border-radius: 8px;
+            display: flex;
+            transition: border .3s;
+            overflow: hidden;
+            textarea{
+                padding: 15px 0px;
+                border-radius: 8px;
+                &::-webkit-scrollbar{
+                    height: 10px;
+                    width: 10px;
+                    background-color: var(--scrollbar-line);
+                }
+                &::-webkit-scrollbar-thumb{
+                    border-radius: 100px;
+                    background: var(--scrollbar-thumb);
+                }
+            }
+        }
+        &-message{
+            width: 100%;
+            textarea{
+                padding: 15px 0px;
+                border-radius: 8px;
+                min-width: 0px;
+                &::-webkit-scrollbar{
+                    height: 10px;
+                    width: 10px;
+                    background-color: var(--scrollbar-line);
+                }
+                &::-webkit-scrollbar-thumb{
+                    border-radius: 100px;
+                    background: var(--scrollbar-thumb);
+                }
+            }
+        }
+        &-input{
+            width: 100%;
+            border: 0px;
+            
+            &:focus {
+                outline:none;
+            }
+        }
+        &-noscroll{
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar { 
+                display: none;
+            }
+        }
+    }
+    .cc-message-box--detail{
+        display: flex;
+        min-height: var(--input-detail-height);
+        padding: var(--input-detail-padding);
+        &-box{
+            flex: auto;
+        }
+    }
+    &.cc-message-box--disabled{
+        .cc-message-box-{
+            &-main{background-color: var(--disbled-background);}
+            &-main{textarea{background-color: var(--disbled-background);}}
+        }
+    }
+}

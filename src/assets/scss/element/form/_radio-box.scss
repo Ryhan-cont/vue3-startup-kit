@@ -1,0 +1,17 @@
+.cc-radio-box--container{
+    .cc-radio-box-{
+        &-main{
+            display: flex;
+        }
+        &-input{
+            display: flex;
+            align-items: center;
+            input{
+                @include site-radio
+            }
+        }
+        &-label{
+            margin-left: 12px;
+        }
+    }
+}

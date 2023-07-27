@@ -1,0 +1,94 @@
+:root{
+    --scrollbar-line: var(--background);
+    --scrollbar-thumb: var(--light);
+    --placeholder-color: var(--light);
+    --placeholder-transition-time: .4s;
+
+        --picker-cursor: '';
+
+}
+
+* {
+    padding:0rem; 
+    margin:0rem; 
+    box-sizing: border-box; 
+    vertical-align: top;
+    font-family: "Roboto", sans-serif;
+    &:before, &:after {
+        box-sizing: border-box; 
+    }
+}
+
+.document-nice-scroll, .document-nice-scroll div{
+    scrollbar-width: thin;
+    scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-line);
+    &::-webkit-scrollbar{
+        height: 10px;
+        width: 10px;
+        background-color: var(--scrollbar-line);
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 100px;
+        background: var(--scrollbar-thumb);
+    }
+}
+
+.thin-scrollbar{
+    scrollbar-width: thin !important;
+    scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-line) !important;
+    &::-webkit-scrollbar{
+        height: 3px !important;
+        width: 3px !important;
+        background-color: var(--scrollbar-line) !important;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 100px !important;
+        background: var(--scrollbar-thumb) !important;
+    }  
+  }
+
+*,*:before,*:after {box-sizing: border-box;margin: 0rem;}
+a {text-decoration: none;}
+html {
+    font-size: 0.875rem;
+    word-spacing: 0.0625rem; 
+    letter-spacing:0.04rem;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+body{
+    color: var(--mid);
+    background-color: var(--background);
+}
+body {
+    margin: 0;
+  }
+  html {
+    box-sizing: border-box;
+  }
+
+//Placeholder
+::-webkit-input-placeholder {@include b3-meta; opacity: 1; -webkit-transition: opacity var(--placeholder-transition-time); transition: opacity var(--placeholder-transition-time); color: var(--placeholder-color); } /* Chrome <=56, Safari < 10 */
+:-moz-placeholder {@include b3-meta; opacity: 1; -moz-transition: opacity var(--placeholder-transition-time); transition: opacity var(--placeholder-transition-time);  color: var(--placeholder-color);} /* FF 4-18 */
+::-moz-placeholder {@include b3-meta; opacity: 1; -moz-transition: opacity var(--placeholder-transition-time); transition: opacity var(--placeholder-transition-time);  color: var(--placeholder-color);} /* FF 19-51 */
+:-ms-input-placeholder {@include b3-meta; opacity: 1; -ms-transition: opacity var(--placeholder-transition-time); transition: opacity var(--placeholder-transition-time);  color: var(--placeholder-color);} /* IE 10+ */
+::placeholder {@include b3-meta; opacity: 1; transition: opacity var(--placeholder-transition-time);  color: var(--placeholder-color);} /* Modern Browsers */
+
+*:focus::-webkit-input-placeholder { opacity: 0; } /* Chrome <=56, Safari < 10 */
+*:focus:-moz-placeholder { opacity: 0;  } /* FF 4-18 */
+*:focus::-moz-placeholder { opacity: 0;  } /* FF 19-50 */
+*:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
+*:focus::placeholder { opacity: 0;  } /* Modern Browsers */
+
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+

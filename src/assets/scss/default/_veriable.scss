@@ -1,0 +1,50 @@
+$colorList:(
+  //Theme colors
+  'primary':#1898A5,
+  'secondary':#59169B,
+  'action':#C21779,
+  'blue':#4477BA,
+  'yellow':#F39F3D,
+  'orange':#BD450F,
+
+  'dark':#1C2B3C ,
+  'mid':#4D4D4D,
+  'light':#939393,
+  'disable':#D3D3D3,
+  'background':#F4F5F7,
+  'white':#FFFFFF,
+
+  'border-primary-active':#1898A5,
+  'border-primary':#B9EBF1,
+  'border-grey':#D3D3D3,
+  'border-grey-dark':#D9D9D9,
+  'border-select':#9747FF,
+
+  'primary-shade':#DCF7FE,
+  'secondary-shade':#F6ECFF,
+  'shade-hover':#F1FCFF,
+  'action-shade':#FFE7F5,
+  'yellow-shade':#FFF4E8,
+  'green-shade':#D8FFE2,
+  'blue-shade':#D9F4FF,
+  'primary-hover-bg': #29a7b5,
+
+
+  'info':#1BA2DB,
+  'info-shade':#E6F4FF,
+  'success':#3EB75E,
+  'success-shade':#E6FDF7,
+  'warning':#FF8F3C,
+  'warning-shade':#FFF8ED,
+  'danger':#FF0003,
+  'danger-shade':#FFEDED,
+);
+
+
+$breakPoint:(
+  '-xlg' : 1600px,
+  '-lg' : 1264px,
+  '-md' : 950px,
+  '-sm' : 600px,
+  '-xsm' : 420px,
+); 

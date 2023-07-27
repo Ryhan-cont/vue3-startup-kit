@@ -1,0 +1,94 @@
+.cc-input-box--container{
+    width: 100%;
+    .cc-input-box-{
+        &-main{
+            //src element/form/index
+            @include input-border;
+            display: flex;
+            border-radius: 4px;
+            background-color: var(--white);
+            transition: all .3s;
+            overflow: hidden;
+        }
+        &-no-border{
+            border-color: transparent !important;
+        }
+        &-input{
+            padding-top: 7px;
+            padding-bottom: 7px;
+            color: var(--mid);
+            width:100%;
+            border: 0px;
+            //src default/typography
+            @include b3-meta;
+            &:focus {
+               outline:none;
+            }
+            &-padding-left{
+               padding-left: 13px;
+            }
+            &-padding-right{
+               padding-right: 13px;
+            }
+            // &[type="number"] {
+            //     -webkit-appearance: textfield;
+            //     -moz-appearance: textfield;
+            //     appearance: textfield;
+            // }
+            &[type=number]::-webkit-inner-spin-button, 
+            &[type=number]::-webkit-outer-spin-button { 
+                opacity: 0;
+            }
+        }
+        &-reset{
+            font-size: 12px;
+            line-height: 12px;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+            cursor: pointer;
+        }
+        &-boundary{
+            position: relative;
+            width: 100%;
+        }
+    }
+    &-sm{
+        .cc-input-box-{
+            &-input{
+                padding-top: 5px;
+                padding-bottom: 5px;
+                &-padding-left{
+                   padding-left: 13px;
+                }
+                &-padding-right{
+                   padding-right: 13px;
+                }
+            }
+        }
+    }
+    .cc-input-box--detail{
+        //root src element/form/index
+       min-height: var(--input-detail-height);
+       padding: var(--input-detail-padding);
+    }
+    &.cc-input-box--disabled{
+        .cc-input-box-{
+            &-main{background-color: var(--disbled-background);}
+            &-main{input{background-color: var(--disbled-background);}}
+        }
+    }
+    &-hine-spinner{
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+        input[type=number] {
+            -moz-appearance:textfield; /* Firefox */
+        }
+    }
+}

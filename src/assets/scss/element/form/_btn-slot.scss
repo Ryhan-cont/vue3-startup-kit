@@ -1,0 +1,46 @@
+.cc-btn-slot-{
+    &-btn-container{
+        position: relative;
+        &:hover{
+            .cc-btn-slot--btn{
+                // border-top: 2px solid var(--action);
+                // border-right: 2px solid var(--action);
+                // border-bottom: 2px solid var(--action);
+                color: var(--action);
+            }
+            // .cc-btn-slot--btn-border{
+            //     border-left: 2px solid var(--action);
+            // }            
+        }
+    }
+    &-btn{
+        padding: 0px 15px;
+        border-top: 2px solid var(--border-primary);
+        border-right: 2px solid var(--border-primary);
+        border-bottom: 2px solid var(--border-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--light);
+        transition: all .3s;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        height: 100%;
+        @include b3-meta;
+        &-border{
+            transition: all .3s;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            border-left: 2px solid transparent;
+        } 
+    }
+    &-container-sm{
+        height:36px;
+        .cc-btn-slot--btn-container{
+            height:36px;
+        }
+    }
+}

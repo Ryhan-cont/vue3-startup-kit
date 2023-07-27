@@ -1,0 +1,70 @@
+// Badge Styles 
+.badge {
+    font-size: 13px;
+    padding: 5px 8px;
+    color: var(--mid);
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: 400;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    i {
+        margin-right: 5px;
+    }
+    &.need-to-sign {
+        background-color: #FFEBEB;
+        i {
+            color: #FF5253;
+        }
+    }
+    &.waiting-for-others {
+        background-color: #D8F3FF;
+        i {
+            color: #52BDEA;
+        }
+    }
+    &.voided {
+        background-color: #F1F1F1;
+        i {
+            color: #939393;
+        }
+    }
+    &.completed {
+        background-color: #F0FAF2;
+        i {
+            color: #3EB75E;
+        }
+    }
+    &.draft {
+        background-color: #F1F1F1;
+        i {
+            color: #939393;
+        }
+    }
+    &.in-person-sign {
+        background-color: #FFF1E7;
+        i {
+            color: #FF8F3C;
+        }
+    }
+    &.expired {
+        background-color: #FFE9E9;
+        i {
+            color: #FF0003;
+        }
+    }
+    &.declined {
+        background-color: #F1F1F1;
+        i {
+            color: #FF0003;
+        }
+    }
+    &.deleted {
+        background-color: #F1F1F1;
+        i {
+            color: #939393;
+        }
+    }
+}

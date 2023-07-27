@@ -1,0 +1,41 @@
+.result-per-page-{
+    &-container{
+        display: flex;
+        white-space: nowrap;
+    }
+    &-text{
+
+    }
+    &-per-page{
+        cursor: pointer;
+        padding: 0 0 0 5px;
+        display: flex;
+        align-items: center;
+        i {
+            margin-left: 8px;
+        }
+    }
+    &-option-container{
+        position: absolute;
+        opacity: 0;
+        background-color: #FFFFFF;
+        max-height: 300px;
+        overflow-y: auto;
+        z-index: 10;
+        box-shadow: 0px 5px 22px rgba(27, 27, 18, 0.13);
+        border-radius: 4px;
+        width: 80px;
+    }
+    &-option-item{
+        padding: 5px 10px;
+        cursor: pointer;
+        text-align: center;
+        &:hover{
+            background-color: var(--background);
+        }
+    }
+    &-total{
+        padding: 0px 5px;
+        font-weight: bold;
+    }
+}
