@@ -14,7 +14,7 @@
 @import './layout/pannel';
 @import './layout/page-layout';
 @import './layout/site';
-@import './layout/message_header';
+@import './layout/message';
 @import './layout/pagelayout.scss';
 
 //Element
@@ -35,6 +35,7 @@
 @import './element/badge';
 
 //Pages
+@import './pages/message';
 
 //Animation
 @import './default/animation';

@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-    import { ref, toRef, computed , useSlots, reactive, watchEffect, onMounted} from 'vue';
+    import { ref, toRef, computed , useSlots, reactive, watchEffect, watch, onMounted} from 'vue';
     import { useField } from 'vee-validate';
     import { validVar } from '@/functions/com.js';
     import Message from '@/components/validate/Message.vue';
@@ -92,7 +92,8 @@
         })
         resizeObserver.observe(containerRef.value);
     })
-    watchEffect(()=>{
+
+    watch(() => props.modelValue, () => {
         modelValueTemp.value = props.modelValue;
     })
 
@@ -131,8 +132,12 @@
             textAreaRef.value.style.height = 'auto'
             textAreaRef.value.style.height = textAreaRef.value.scrollHeight+'px';  
             setTimeout(()=>{
-                    textAreaRef.value.style.width = 'auto' 
-                },2000)   
+                if(textAreaRef.value){
+                    if(textAreaRef.value){
+                        textAreaRef.value.style.width = 'auto'
+                    }
+                }
+            },2000)
         }
     };
     const changedValue = (value) => {

@@ -4,20 +4,20 @@
         <div class="cursor-pointer pa-10 bg-primary text-white no-text-select d-inline-block mb-20" @click="dateVal = '1-24-2022'">change date</div>
         <div class="cursor-pointer pa-10 bg-primary text-white no-text-select d-inline-block mb-20 ml-20" @click="validateFormGen()">Validate</div>
         <div>
-            <DatePicker :validate="Yup.date().nullable().required()" showDetail v-model="dateVal" format="MM-yyyy-dd" name="single-date" />
+            <DatePicker style="width: 250px;" :validate="Yup.date().nullable().required()" showDetail v-model="dateVal" format="MM-yyyy-dd" name="single-date" />
         </div>
         <h4 class="mb-15 mt-20">Range Picker</h4>
         <div>
-            <DatePicker range v-model="rangeValue" format="MM-yyyy-dd" />
+            <DatePicker style="width: 250px;" range v-model="rangeValue" format="MM-yyyy-dd" />
         </div>
         <div class="border-grey-b1 text-h3 mt-20 mb-10 py-5">Slot</div>
         <h4 class="mb-15 mt-20">Range Preset</h4>
         <div>
-            <DatePicker range applyButton rangePreset v-model="rangeValue" />
+            <DatePicker style="width: 250px;" range applyButton rangePreset v-model="rangeValue" />
         </div>
         <h4 class="mb-15 mt-20">Min Max Date</h4>
         <div>
-            <DatePicker range :maxDate="maxDate" :minDate="minDate" v-model="rangeValue" reset />
+            <DatePicker style="width: 250px;" range :maxDate="maxDate" :minDate="minDate" v-model="rangeValue" reset />
         </div>
         <div class="border-grey-b1 text-h3 mt-20 mb-10 py-5">Slot</div>
         <div>

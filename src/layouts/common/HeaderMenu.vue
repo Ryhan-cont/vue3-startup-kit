@@ -13,9 +13,9 @@
         </template>
         <template v-slot:menu={closeMenu}>
             <div class="ma-5" style="width:150px">
-                <router-link :to="{ name: 'profileSettings'}" class="color-mid">
+                <!-- <router-link :to="{ name: 'profileSettings'}" class="color-mid">
                     <div class="pa-10 cursor-pointer hover-bg-primary-shade transition-3 color-mid text-b3-meta">My Profile</div>
-                </router-link>
+                </router-link> -->
                 
                 <div class="pa-10 cursor-pointer hover-bg-primary-shade transition-3 color-mid text-b3-meta" @click="logout">Log Out</div>
             </div>

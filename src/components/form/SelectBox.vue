@@ -48,7 +48,7 @@
 </template>
 
 <script setup>
-    import { defineProps, defineEmits, ref, watchEffect, computed, useSlots, nextTick, toRef, reactive, onUnmounted } from 'vue';
+    import { defineProps, defineEmits, ref, watchEffect, watch, computed, useSlots, nextTick, toRef, reactive, onUnmounted } from 'vue';
     import { useField } from 'vee-validate';
     import Message from '@/components/validate/Message.vue';
     import { validVar, randomString } from '@/functions/com.js';
@@ -111,7 +111,7 @@
         msg:'',
     })
 
-    watchEffect(()=>{
+    watch(() => props.modelValue, () => {
         modelValueTemp.value = props.modelValue;
     })
 

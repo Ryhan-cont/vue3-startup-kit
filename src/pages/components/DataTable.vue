@@ -20,11 +20,13 @@
                     <!-- <HeaderUserMenu /> -->
                 </template>
                 <template v-slot:address >
-                    <SelectBox :options="['Cat', 'Dog', 'Tiget', 'Lion']" />
+                    <div style="width:200px">
+                        <SelectBox :options="['Cat', 'Dog', 'Tiget', 'Lion']" />
+                    </div>
                 </template>
                 <template v-slot:action >
-                    <div>
-                        <DatePicker  />
+                    <div style="width:200px">
+                        <DatePicker />
                     </div>
                 </template>
                 <template v-slot:table-action="{data, closeAllAction}" >
@@ -39,7 +41,7 @@
             <DataTable class="data-table" actionColumn :onLoading="onLoading"  :headerData="dataTableHeader" :tableData="dataTableData" @sort="tableSort"  :checkBox="{field:'status', style:{width:'20px'}}" >
                 <template v-slot:name>
                     <div>
-                        <DatePicker  />
+                        <DatePicker style="width:200px" />
                     </div>
                 </template>
                 <template v-slot:table-action="{data, closeAllAction}" >
@@ -58,7 +60,7 @@
             </DataTable>
             <div class="d-flex">
                 <div class="flex-auto">
-                    <Pagination @change="loadPage" :totalPage="0" :currentPage="currentPage" blockWidth="41px" :paginationLength="6" />
+                    <Pagination @change="loadPage" :totalPage="10" :currentPage="currentPage" blockWidth="41px" :paginationLength="1" />
                 </div>
                 <div class="d-flex-v-center">
                     <ResultPerPage :totalResult="10" :perPage="5" />
@@ -108,20 +110,19 @@
         {
             title:'Name',
             field:'name',
-            style:{maxWidth:'2000px'},
             sort:'asc'
         },
         {
             title:'Address',
             field:'address.0.present',
             slotName:'address',
-            style:{maxWidth:'300px'}
+            style:{width:'200px'}
         },
         {
             title:'Action',
             field:'id',
             slotName:'action',
-            style:{maxWidth:'50px'}
+            style:{width:'200px'}
         },
     ])
     const dataTableData = reactive([
@@ -138,7 +139,7 @@
             id:2,
             name:'Abdul Khalek',
             address:[{
-                present:'xxxx',
+                present:'Address',
                 permanent:''
             }],
             status:true,

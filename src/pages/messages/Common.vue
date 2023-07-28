@@ -11,7 +11,7 @@
     <div v-if="noButton === false">
         <slot name="button" />
         <div v-if="!slots['button']" class="message-button-group">
-            <a href="/inbox" class="btn btn-mid btn-primary">Go Back To Home</a>
+            <a href="/button-component" class="btn btn-mid btn-primary">Go Back To Home</a>
         </div>
     </div>
 </template>
