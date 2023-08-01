@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :style="{width:width+'px', height:(height+90)+'px'}">
         <div class="ba-1 border-border-grey position-relative" ref="colorPickerContainerRef">
             <canvas ref="colorPickerCanvasRef" @mousedown="colorPickEvent($event, 'canvas')" :width="canvasWidth" :height="canvasHeight"></canvas>
             <div class="position-abs box-18 round-div ba-1 border-white" @mousedown="colorPickEvent($event, 'selector')" :style="{left:pickerX-9+'px', top:pickerY-9+'px', backgroundColor:selectedColor}"></div>

@@ -7,8 +7,8 @@
             <!-- {{aviList.length - show}} -->
             +
         </div>
-        <BtnBox v-if="aviList.length == 0" class="btn-secondary-outlined btn-xxs font-13 mr-5">
-            <i class="far fa-plus-circle font-12 mr-5"></i>Share
+        <BtnBox v-if="aviList.length == 0 && emptyText != ''" class="btn-secondary-outlined btn-xxs font-13 mr-5" >
+            <i class="far fa-plus-circle font-12 mr-5"></i>{{ emptyText }}
         </BtnBox>
     </div>
 </template>
@@ -17,6 +17,7 @@
     const props = defineProps({
         aviList:{type:Array, default: () => {return []}},
         show:{type:Number, default:3},
-        field:{type:String, default:'avi'}
+        field:{type:String, default:'avi'},
+        emptyText:{type:String, default:''}
     })
 </script>

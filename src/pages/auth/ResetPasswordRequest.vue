@@ -46,24 +46,3 @@
 
 
 </script>
-
-<style lang="scss" scoped>
-.reset-card {
-    max-width: 556px;
-    width: 100%;
-    padding: 50px 10px;
-    background: var(--white);
-    border-radius: 4px;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.08);
-    margin: 10px;
-    &-content{
-        width: 100%;
-        max-width: 364px;
-        margin: auto;
-    }
-    &-logo{
-        width: 180px;
-    }
-}
-</style>

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const usePannelLayoutStore = defineStore('pannelLayout', {
+export const usePanelLayoutStore = defineStore('panelLayout', {
     state: () => ({
         //Default Settings
         breakPoint : 1150,

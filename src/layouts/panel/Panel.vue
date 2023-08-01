@@ -1,8 +1,8 @@
 <template>
-  <div class="pannel--layout">
+  <div class="panel--layout">
     <Header />
-    <transition :name="pannelLayout.floatingLeftMenu ? 'fade-left-menu' : 'slide-left-menu'">
-      <LeftMenu v-if="pannelLayout.leftMenuStat" />
+    <transition :name="panelLayout.floatingLeftMenu ? 'fade-left-menu' : 'slide-left-menu'">
+      <LeftMenu v-if="panelLayout.leftMenuStat" />
     </transition>
     <Body>
         <router-view v-slot="{ Component }">
@@ -24,12 +24,13 @@
     import LeftMenu from './LeftMenu.vue';
     import Body from './Body.vue';
 
-    import {usePannelLayoutStore} from '@/store/layout/pannelLayout'
-    import {useMouseProcessor} from '@/store/plugins/mouseProcessor';
+    import {usePanelLayoutStore} from '@/store/layout/panelLayout'
+    const panelLayout = usePanelLayoutStore();
 
-
-    const mouseProcessor = useMouseProcessor();
-    const pannelLayout = usePannelLayoutStore();
+    // Open if mouse process require
+    // import {useMouseProcessor} from '@/store/plugins/mouseProcessor';
+    // const mouseProcessor = useMouseProcessor();
+    
 
     /**
      * loadEvents
@@ -39,11 +40,12 @@
      */
     const loadEvents = () => {
         if(!document){return}
-        document.addEventListener('mousemove', mouseProcessor.mouseMoveEvent);
-        document.addEventListener('mouseup', mouseProcessor.mouseUpEvent);
+        // Open if mouse process require
+        // document.addEventListener('mousemove', mouseProcessor.mouseMoveEvent);
+        // document.addEventListener('mouseup', mouseProcessor.mouseUpEvent);
 
-        document.addEventListener('touchmove', mouseProcessor.mouseMoveEvent, { passive: false });
-        document.addEventListener('touchend', mouseProcessor.mouseUpEvent, { passive: false });
+        // document.addEventListener('touchmove', mouseProcessor.mouseMoveEvent, { passive: false });
+        // document.addEventListener('touchend', mouseProcessor.mouseUpEvent, { passive: false });
     }
     /**
      * removeEvents
@@ -53,11 +55,12 @@
      */
     const removeEvents = () => {
         if(!document){return}
-        document.removeEventListener('mousemove', mouseProcessor.mouseMoveEvent);
-        document.removeEventListener('mouseup', mouseProcessor.mouseUpEvent);
+        // Open if mouse process require
+        // document.removeEventListener('mousemove', mouseProcessor.mouseMoveEvent);
+        // document.removeEventListener('mouseup', mouseProcessor.mouseUpEvent);
 
-        document.removeEventListener('touchmove', mouseProcessor.mouseMoveEvent, { passive: false });
-        document.removeEventListener('touchend', mouseProcessor.mouseUpEvent, { passive: false });
+        // document.removeEventListener('touchmove', mouseProcessor.mouseMoveEvent, { passive: false });
+        // document.removeEventListener('touchend', mouseProcessor.mouseUpEvent, { passive: false });
     }
 
     /**
@@ -66,11 +69,11 @@
      * ########################################################################################
      */
     onBeforeMount(()=>{
-      pannelLayout.innitialize();
-      window.addEventListener('resize', pannelLayout.resizeController)
+      panelLayout.innitialize();
+      window.addEventListener('resize', panelLayout.resizeController)
     });
     onBeforeUnmount(()=>{
-      window.removeEventListener('resize', pannelLayout.resizeController);
+      window.removeEventListener('resize', panelLayout.resizeController);
     });
 
     // Implemented Pusher Notifications

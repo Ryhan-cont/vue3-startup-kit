@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import {usePannelLayoutStore} from '@/store/layout/pannelLayout';
+import {usePanelLayoutStore} from '@/store/layout/panelLayout';
 
 
 const routes = [
@@ -13,11 +13,47 @@ const routes = [
         component: () => import('@/pages/dashboard/index.vue'),
         meta: {pageTitle: 'Dashboard',},
       },
+      {
+        path: '/login',
+        name: 'login',
+        component: () => import('@/pages/auth/Login.vue'),
+        meta: {pageTitle: 'Log in',},
+      },
+      {
+        path: '/reset-password-request',
+        name: 'resetPasswordRequest',
+        component: () => import('@/pages/auth/ResetPasswordRequest.vue'),
+        meta: {pageTitle: 'Reset Password Request',},
+      },
+      {
+        path: '/password-expired',
+        name: 'passwordExpired',
+        component: () => import('@/pages/auth/PasswordExpired.vue'),
+        meta: {pageTitle: 'Password Expired',},
+      },
+      {
+        path: '/change-password',
+        name: 'changePassword',
+        component: () => import('@/pages/auth/ChangePassword.vue'),
+        meta: {pageTitle: 'Change Password',},
+      },
+      {
+        path: '/reset-password',
+        name: 'resetPassword',
+        component: () => import('@/pages/auth/ResetPassword.vue'),
+        meta: {pageTitle: 'Reset Password',},
+      },
+      {
+        path: '/two-factor-authentication',
+        name: 'twoFactorAuthentication',
+        component: () => import('@/pages/auth/TwoFactorAuthentication.vue'),
+        meta: {pageTitle: 'Two Factor Authentication',},
+      },
     ],
   },
   {
     path: '/',
-    component: () => import('@/layouts/pannel/Pannel.vue'),
+    component: () => import('@/layouts/panel/Panel.vue'),
     children: [
       {
         path: '/button-component',
@@ -174,8 +210,8 @@ router.beforeEach((to, from, next) => {
   for(let item of menuOptionEl){item.remove();}
 
   //Top loading bar
-  let pannelLayout = usePannelLayoutStore();
-  pannelLayout.activeRoute = to.name;
+  let panelLayout = usePanelLayoutStore();
+  panelLayout.activeRoute = to.name;
 
   if(!to.meta.source || !from.meta.source || to.meta.source != from.meta.source){
     //Top loading bar

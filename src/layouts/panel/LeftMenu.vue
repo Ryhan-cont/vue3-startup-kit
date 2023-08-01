@@ -1,14 +1,14 @@
 <template>
-    <div :class="['pannel--left-menubar', {'pannel--left-menubar-floating': pannelLayout.floatingLeftMenu}]" :style="{width:`${pannelLayout.leftMenuWidth}px`, top:pannelLayout.floatingLeftMenu ? '0px' : `${pannelLayout.headerHeight}px`}" @click="closeHoverLeftMenu">
-        <div class="pannel--left-menubar-main" :style="{width:`${pannelLayout.leftMenuWidth}px`, height: pannelLayout.floatingLeftMenu ? '100vh' : `calc(100vh - ${pannelLayout.headerHeight}px)`}">
+    <div :class="['panel--left-menubar', {'panel--left-menubar-floating': panelLayout.floatingLeftMenu}]" :style="{width:`${panelLayout.leftMenuWidth}px`, top:panelLayout.floatingLeftMenu ? '0px' : `${panelLayout.headerHeight}px`}" @click="closeHoverLeftMenu">
+        <div class="panel--left-menubar-main" :style="{width:`${panelLayout.leftMenuWidth}px`, height: panelLayout.floatingLeftMenu ? '100vh' : `calc(100vh - ${panelLayout.headerHeight}px)`}">
             <div v-for="(item, index) in menuItems" :key="index" class="my-5">
                 <!-- {{item.items}} -->
                 <router-link v-if="item.routeName" :to="{ name: item.routeName}">
-                    <div :class="['pannel--left-menubar-btn','text-b2-bold', {'pannel--left-menubar-active-btn':pannelLayout.activeRoute==item.routeName}]"><span :class="item.icon" class="font-16 fw-400 mr-10"></span>{{item.name}}</div>
+                    <div :class="['panel--left-menubar-btn','text-b2-bold', {'panel--left-menubar-active-btn':panelLayout.activeRoute==item.routeName}]"><span :class="item.icon" class="font-16 fw-400 mr-10"></span>{{item.name}}</div>
                 </router-link>
                 <div v-else>
-                    <div :class="[{'pannel--left-menubar-sub-active':item.show}]">
-                        <div :class="['pannel--left-menubar-btn', 'text-b2-bold', {'pannel--left-menubar-toggle-active-btn':item.show}]" @click="item.show = !item.show">
+                    <div :class="[{'panel--left-menubar-sub-active':item.show}]">
+                        <div :class="['panel--left-menubar-btn', 'text-b2-bold', {'panel--left-menubar-toggle-active-btn':item.show}]" @click="item.show = !item.show">
                             <span :class="item.icon" class="font-16 fw-400 mr-10"></span>{{item.name}}
                             <span class="flex-auto text-right pr-10 far fa-angle-down font-12"></span>
                         </div>
@@ -18,10 +18,10 @@
                             @after-enter="afterEnter"
                             @leave="leave"
                         >
-                            <div class="pannel--left-menubar-sub-container" v-if="item.show">
+                            <div class="panel--left-menubar-sub-container" v-if="item.show">
                                 <div v-for="(subItems, subIndex) in item.items" :key="'subitem-'+subIndex">
                                     <router-link :to="{ name: subItems.routeName}">
-                                        <div :class="['pannel--left-menubar-sub-btn', 'text-b3-meta', {'pannel--left-menubar-sub-active-btn':pannelLayout.activeRoute==subItems.routeName}]">{{subItems.name}}</div>
+                                        <div :class="['panel--left-menubar-sub-btn', 'text-b3-meta', {'panel--left-menubar-sub-active-btn':panelLayout.activeRoute==subItems.routeName}]">{{subItems.name}}</div>
                                     </router-link>
                                 </div>
                             </div>
@@ -35,18 +35,18 @@
  
 <script setup>
     import { ref, reactive, onMounted, computed  } from 'vue';
-    import { usePannelLayoutStore } from '@/store/layout/pannelLayout';
+    import { usePanelLayoutStore } from '@/store/layout/panelLayout';
     import { useAuth } from '@/store/auth/auth';
     import { menuData } from './js/menu.js'
 
-    const pannelLayout = usePannelLayoutStore();
+    const panelLayout = usePanelLayoutStore();
     const authStore = useAuth();
 
     const menuItems = ref(menuData)
 
     const closeHoverLeftMenu = (e) => {
-        if(e.target.closest('.pannel--left-menubar-main') == null){
-            pannelLayout.leftMenuStat = false;
+        if(e.target.closest('.panel--left-menubar-main') == null){
+            panelLayout.leftMenuStat = false;
         }
     }
 
